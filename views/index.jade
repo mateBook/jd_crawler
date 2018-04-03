@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Title
+    body
+        each item in data.data
+            p id:#{item.id}
+            p title:#{item.info}
+            p price:#{item.price}
+            img(src="#{item.s_img}")
+
