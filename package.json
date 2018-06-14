@@ -2,14 +2,21 @@
   "name": "",
   "version": "",
   "dependencies": {
+    "captchapng": "^0.0.1",
     "koa": "^2.5.0",
     "koa-bodyparser": "^3.2.0",
     "koa-logger": "^3.2.0",
+    "koa-multer": "^1.0.2",
     "koa-router": "^7.4.0",
+    "koa-router-multer": "^1.3.0",
+    "koa-static": "^4.0.3",
     "koa-views": "^6.1.4",
+    "koa2-cors": "^2.0.5",
     "mongoose": "^5.0.12",
     "puppeteer": "^1.2.0",
-    "segment": "^0.1.3"
+    "request": "^2.87.0",
+    "segment": "^0.1.3",
+    "winston": "^2.4.2"
   },
   "devDependencies": {
     "jade": "^1.11.0"

@@ -3,7 +3,7 @@ const url = "https://www.jd.com/";
 (async ()=>{
     const  browser =await puppeteer.launch({
         headless:false,
-        orgs:["--no-sanbox"],
+        orgs:["--no-sandbox"],
         dumpio:false
     });
     const page = await browser.newPage();

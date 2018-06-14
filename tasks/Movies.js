@@ -35,12 +35,13 @@ db.once('open', function () {
         const err = code === "0" ? null : new Error("err code: " + code);
         console.log(err);
     });
+    const Browser = await puppeteer.launch({
+        args: ['--no-sandbox'],
+        dumpio: false
+    });
     child.on("message", async(data)=> {
         let result = data.result;
-        const Browser = await puppeteer.launch({
-            args: ['--no-sandbox'],
-            dumpio: false
-        });
+
         const Page = await Browser.newPage();
         for (let i = 0; i < result.length; i++) {
             let doubanId = result[i].src;

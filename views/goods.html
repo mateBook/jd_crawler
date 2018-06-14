@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-1.7.0.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        body{
+            padding:15px;
+            box-sizing: border-box;
+        }
+        li{
+            /*display: flex;*/
+            /*justify-content: space-between;*/
+            /*align-items: center;*/
+            /*flex-wrap:wrap;*/
+            margin-top: 5px;
+        }
+        li a{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        img{
+            width:30%;
+            height:auto;
+        }
+        li div{
+            width: 65%;
+            margin-left: 1%;
+        }
+        p:nth-child(2){
+            color:red;
+        }
+        a{
+            color:black;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+<ul>
+
+</ul>
+<script>
+    $(function(){
+        var url = "http://localhost:1234/index?page=1&pageSize=658";
+        $.get(url,{},function(res){
+            var data = res.data;
+            data.map(function(item){
+                var html = `<li>
+                                <a href="${item.id}">
+                                   <img src="${item.l_img}" alt="">
+                                   <div>
+                                       <p>${item.info}</p>
+                                       <p>&yen;${item.price}</p>
+                                    </div>
+                               </a>
+                            </li>`;
+                $("ul").append(html);
+            })
+        })
+    })
+</script>
+</body>
+</html>
